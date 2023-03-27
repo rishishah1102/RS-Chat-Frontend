@@ -89,35 +89,30 @@ function Chat() {
         return { innerWidth, innerHeight };
     }
 
-    if (contacts.length === 0) {
-        return null;
-    } else {
+    return (
+        windowSize.innerWidth > 950 ?
+            <div className='chat'>
+                <div className='chatBody'>
+                    <Sidebar contacts={contacts} info={info} onSelected={handleName} />
+                    {name ?
+                        <Chatting message={messages} myName={info.name} contact={userContact} />
+                        :
+                        <img src={Logo} alt="Logo" style={{ width: "70%" }} />
+                    }
+                </div>
+            </div>
+            :
+            <div className="chat">
+                <div className="chatBody">
 
-        return (
-            windowSize.innerWidth > 950 ?
-                <div className='chat'>
-                    <div className='chatBody'>
+                    {name ?
+                        <Chatting message={messages} myName={info.name} contact={userContact} onPressBack={handleName} />
+                        :
                         <Sidebar contacts={contacts} info={info} onSelected={handleName} />
-                        {name ?
-                            <Chatting message={messages} myName={info.name} contact={userContact} />
-                            :
-                            <img src={Logo} alt="Logo" style={{ width: "70%" }} />
-                        }
-                    </div>
+                    }
                 </div>
-                :
-                <div className="chat">
-                    <div className="chatBody">
-
-                        {name ?
-                            <Chatting message={messages} myName={info.name} contact={userContact} onPressBack={handleName} />
-                            :
-                            <Sidebar contacts={contacts} info={info} onSelected={handleName} />
-                        }
-                    </div>
-                </div>
-        );
-    }
+            </div>
+    );
 
 };
 
