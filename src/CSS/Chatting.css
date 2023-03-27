@@ -1,0 +1,182 @@
+.chatting {
+    display: flex;
+    flex-direction: column;
+    /* flex: 0.7; */
+    width: 70%;
+}
+
+.chattingHeader {
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    border-bottom: 1px solid lightgray;
+}
+
+.chattingHeaderRight>.MuiSvgIcon-root {
+    cursor: pointer;
+}
+
+.chattingHeaderInfo {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.chattingHeaderInfo>h3 {
+    font-weight: 500;
+}
+
+.chattingHeaderInfo>p {
+    color: gray;
+}
+
+.chattingBody {
+    flex: 1;
+    background-image: url("https://i.pinimg.com/originals/85/70/f6/8570f6339d3189c96e340d47a581d3b8.jpg");
+    background-position: center;
+    padding: 30px;
+    overflow: scroll;
+}
+
+.chattingBody::-webkit-scrollbar {
+    display: none;
+}
+
+.chattingBody>div::-webkit-scrollbar {
+    display: none;
+}
+
+.chattingMessage {
+    position: relative;
+    font-size: 16px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 300px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.chatSender {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+
+.chattingPersonName {
+    position: absolute;
+    top: -15px;
+    font-weight: 800;
+    font-size: xx-small;
+}
+
+.chattingTimestamp {
+    margin-left: 10px;
+    display: block;
+    font-size: xx-small;
+    position: relative;
+    bottom: -15px;
+    float: right;
+}
+
+.chattingFooter {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    border-top: 1px solid lightgray;
+    padding: 0px 20px;
+    background-color: rgb(228, 228, 228);
+}
+
+.chattingFooter>.MuiSvgIcon-root {
+    padding-right: 5px;
+    cursor: pointer;
+    color: gray;
+}
+
+.chattingFooter>form {
+    flex: 1;
+    /* width: 100%; */
+    display: flex;
+}
+
+.chattingFooter>form>input {
+    /* flex: 1; */
+    width: 100%;
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.chattingFooter>button {
+    outline: none;
+    border: none;
+    background-color: rgb(228, 228, 228);
+    color: gray;
+    cursor: pointer;
+}
+
+.chattingHeaderRight {
+    position: relative;
+}
+
+.chattingHeaderRight .chattingDropdown {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    z-index: 2;
+    width: 140px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.chattingHeaderRight .show {
+    height: 50px;
+    width: 140px;
+    opacity: 1;
+}
+
+.chattingHeaderRight .chattingDropdown .chattingList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chattingHeaderRight .chattingDropdown .chattingList .chattingListItem {
+    background-color: rgb(198, 198, 198);
+    padding: 8px 12px;
+    border: 1px solid rgba(125, 125, 125, 0.4);
+}
+
+.chattingHeaderRight .chattingDropdown .chattingList .chattingListItem h4 {
+    padding: 0 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.emoji {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 2%;
+    bottom: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.showEmoji {
+    height: 400px;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 950px) {
+    .chatting {
+        width: 100%;
+    }
+}

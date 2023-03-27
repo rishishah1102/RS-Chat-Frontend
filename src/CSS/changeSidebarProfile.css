@@ -1,0 +1,49 @@
+.changeSidebarProfile {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7yRvRW9qORMy-njIkvwciYn2reeKeVS_NkXleLy13kLF3mlwPiqmWr3DlV6omRNejuFk&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.changeSidebarProfile .changeSidebarProfileHeader {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.changeSidebarProfile .changeSidebarProfileHeader .changeProfileInputImage {
+    position: absolute;
+    top: 50px;
+    height: 150px;
+    width: 150px;
+    content-visibility: hidden;
+    border-radius: 100px;
+}
+
+.changeSidebarProfile .changeSidebarProfileButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.changeSidebarProfile .changeSidebarProfileButton button {
+    width: 10rem;
+    margin: 0 auto;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    font-size: 1rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.changeSidebarProfile .changeSidebarProfileButton button:hover {
+    border-radius: 20px;
+    background-color: rgb(238, 238, 238);
+}

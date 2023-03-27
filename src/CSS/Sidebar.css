@@ -1,0 +1,147 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.3;
+    min-width: 30%;
+}
+
+.sidebarHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgb(228, 228, 228);
+    border: 1px solid lightgray;
+}
+
+.sidebarHeaderRight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 9vw;
+}
+
+.sidebarSearch {
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 39px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(190, 189, 189);
+}
+
+.sidebarSearchContainer {
+    display: flex;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    width: 100%;
+    height: 35px;
+    padding: 0 8px;
+    
+    border-radius: 10px;
+}
+
+/* .sidebarSearchContainer > .MuiSvgIcon-root {
+    color: gray;
+    padding: 10px;
+    cursor: pointer;
+} */
+
+/* .sidebarSearchContainer > input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    background-color: rgb(228, 228, 228);
+    width: 80%;
+} */
+
+.sidebarSearchContainer h2 {
+    text-align: center;
+    width: 100%;
+}
+
+.sidebarChats {
+    flex: 1;
+    overflow: scroll;
+}
+
+.sidebarChats::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebarHeaderRight .icons {
+    position: relative;
+}
+
+.sidebarHeaderDropdown {
+    position: absolute;
+    top: 10.5%;
+    width: 28.5%;
+    z-index: 2;
+    color: black;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.changeProfile {
+    height: 65%;
+    opacity: 1;
+}
+
+.show {
+    height: 85%;
+    opacity: 1;
+}
+
+.sidebarList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebarList:active {
+    height: 100px;
+}
+
+.sidebarListItem {
+    background-color: rgb(198, 198, 198);
+    padding: 8px 12px;
+    border: 1px solid rgba(125, 125, 125, 0.4);
+    display: flex;
+    align-items: center;
+}
+
+.sidebarListItem:hover {
+    background-color: rgb(178, 178, 178);
+    cursor: pointer;
+}
+
+.sidebarListItem h4 {
+    padding: 0 15px;
+    font-size: 1.5rem;
+}
+
+.sidebarProfile {
+    left: 2.5%;
+}
+
+.contact {
+    left: 2.5%;
+}
+
+@media only screen and (max-Width: 950px) {
+    .sidebar {
+        min-width: 100%;
+    }
+    .sidebarHeaderDropdown {
+        width: 95%;
+        top: 85px;
+    }
+}
+
+@media only screen and (max-Width: 285px) {
+    .sidebarSearchContainer h2 {
+        font-size: 100%;
+    }
+}

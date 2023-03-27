@@ -1,0 +1,42 @@
+.sidebarChat {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    background-color: white;
+    border-bottom: 1px solid rgb(190, 189, 189);
+    height: 25px;
+}
+
+.sidebarChat:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.sidebarChat .sidebarChatDropdown {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    height: 100px;
+    width: 100px;
+    z-index: 2;
+}
+
+.sidebarChatInfo {
+    margin-left: 15px;
+}
+
+.sidebarChatInfo > h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sidebarChatInfo > p {
+    font-size: 15px;
+}
+
+.sidebarChat > .timeStamp {
+    position: absolute;
+    font-size: xx-small;
+    right: 20px;
+}
