@@ -95,7 +95,7 @@ function Login() {
             const mobileNumber = {
                 phoneNumber: cc + num
             };
-            axios.post('http://localhost:5000/', mobileNumber)
+            axios.post('https://rschat-backend.onrender.com/', mobileNumber)
                 .then((response) => {
                     localStorage.setItem("rschattoken", response.data.token);
                     if (response.data.message === "User Already exists") {
