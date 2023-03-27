@@ -9,6 +9,8 @@ import ChangeSidebarProfile from './ChangeSidebarProfile';
 import Tooltip from '@mui/material/Tooltip';
 
 function Sidebar({ contacts, info, onSelected }) {
+    console.log(contacts);
+    console.log(info);
     const Navigate = useNavigate();
     const [newChatClick, setNewChatClick] = useState(false);
     const [profileClick, setProfileClick] = useState(false);
@@ -69,7 +71,7 @@ function Sidebar({ contacts, info, onSelected }) {
             </div>
 
             <div className="sidebarChats">
-                {info.chats.length === 0 ?
+                {info.chats === undefined || info.chats.length === 0 ?
                     <div style={{ position: 'relative', top: "10px" }}><h2 style={{ textAlign: "center" }}>Start a new Conversation</h2></div>
                     :
                     info.chats.map((chat, index) => {
