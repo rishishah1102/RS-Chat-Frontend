@@ -33,7 +33,7 @@ function Chat() {
             setNewMess(false);
             return;
         }
-    }, [name]);
+    }, [name, newMess]);
 
     const handleName = (name) => {
         contacts.map((contact, index) => {
