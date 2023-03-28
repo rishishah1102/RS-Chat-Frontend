@@ -65,7 +65,7 @@ function Chatting({ message, contact, myName, onPressBack }) {
                     <p>{contact.description}</p>
                 </div>
                 <div className="chattingHeaderRight">
-                    <span onClick={() => { onPressBack("") }}>
+                    <span onClick={() => { onPressBack("") }} className='backButton'>
                         <Tooltip title="Back Button">
                             <IconButton>
                                 <ArrowBackIcon />

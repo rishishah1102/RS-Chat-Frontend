@@ -124,6 +124,10 @@
     position: relative;
 }
 
+.chattingHeaderRight .backButton {
+    visibility: hidden;
+}
+
 .chattingHeaderRight .chattingDropdown {
     position: absolute;
     top: 3rem;
@@ -178,5 +182,9 @@
 @media only screen and (max-width: 950px) {
     .chatting {
         width: 100%;
+    }
+
+    .chattingHeaderRight .backButton {
+        visibility: visible;
     }
 }
