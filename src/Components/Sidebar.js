@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../CSS/Sidebar.css';
 import ChatIcon from '@mui/icons-material/Chat';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -9,12 +9,16 @@ import ChangeSidebarProfile from './ChangeSidebarProfile';
 import Tooltip from '@mui/material/Tooltip';
 
 function Sidebar({ contacts, info, onSelected }) {
-    console.log(contacts);
-    console.log(info);
     const Navigate = useNavigate();
     const [newChatClick, setNewChatClick] = useState(false);
     const [profileClick, setProfileClick] = useState(false);
-    const [profilePhoto, setProfilePhoto] = useState(info.profilePhoto);
+    const [profilePhoto, setProfilePhoto] = useState("");
+
+    useEffect(() => {
+        if (info.profilePhoto !== "" || info.profilePhoto !== undefined) {
+            setProfilePhoto(info.profilePhoto);
+        }
+    }, [info.profilePhoto]);
 
     const handleClick = (click) => {
         setProfileClick(click);
@@ -48,7 +52,7 @@ function Sidebar({ contacts, info, onSelected }) {
                             {contacts.map((contact, index) => {
                                 return (
                                     <li key={index} className='sidebarListItem' onClick={() => { onSelected(contact.name); setNewChatClick(!newChatClick) }}>
-                                        <Avatar src={contact.profilePhoto} />
+                                        <Avatar src={contact?.profilePhoto} />
                                         <h4>{contact.name}</h4>
                                     </li>
                                 );
@@ -75,10 +79,10 @@ function Sidebar({ contacts, info, onSelected }) {
                     <div style={{ position: 'relative', top: "10px" }}><h2 style={{ textAlign: "center" }}>Start a new Conversation</h2></div>
                     :
                     info.chats.map((chat, index) => {
-                        let lastMess, timeStamp, lastMessageSender, profilePhoto;
+                        let lastMess, timeStamp, lastMessageSender, cprofilePhoto;
                         contacts.map((contact) => {
                             if (contact.name === chat.name) {
-                                profilePhoto = contact.profilePhoto;
+                                cprofilePhoto = contact.profilePhoto;
                             }
                             return null;
                         });
@@ -90,7 +94,7 @@ function Sidebar({ contacts, info, onSelected }) {
                             }
                             return null;
                         });
-                        return <SidebarChat name={chat.name} lastMessName={lastMessageSender} profilePhoto={profilePhoto} select={onSelected} lastMessage={lastMess} timeStamp={timeStamp} key={index} />;
+                        return <SidebarChat name={chat.name} lastMessName={lastMessageSender} profilePhoto={cprofilePhoto} select={onSelected} lastMessage={lastMess} timeStamp={timeStamp} key={index} />;
                     })
                 }
 

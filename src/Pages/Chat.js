@@ -40,7 +40,6 @@ function Chat() {
             if (contact.name === name) {
                 if (info?.chats?.length === 0) {
                     setMessages([]);
-                    return null;
                 }
                 else {
                     info?.chats?.map((chat) => {
@@ -72,6 +71,7 @@ function Chat() {
             });
         }
     }, [messages]);
+
     useEffect(() => {
         function handleWindowResize() {
             setWindowSize(getWindowSize());

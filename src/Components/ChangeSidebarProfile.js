@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Avatar } from '@mui/material';
 import '../CSS/changeSidebarProfile.css';
 import axios from 'axios';
@@ -7,7 +7,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function ChangeSidebarProfile({ profilePhoto, click, handlePhoto }) {
-    const [imageUrl, setImageUrl] = useState(profilePhoto);
+    const [imageUrl, setImageUrl] = useState("");
+
+    useEffect(() => {
+        if (profilePhoto !== "" || profilePhoto !== undefined) {
+            setImageUrl(profilePhoto);
+        }
+    }, [profilePhoto]);
 
     const handleImageUpload = async (e) => {
         const file = e.target.files[0];

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../CSS/Chatting.css'
 import { Avatar, IconButton, Tooltip } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -18,6 +18,13 @@ function Chatting({ message, contact, myName, onPressBack }) {
     const [input, setInput] = useState("");
     const [menuClick, setMenuClick] = useState(false);
     const [showEmoji, setShowEmoji] = useState(false);
+    const [contProfilePhoto, setContProfilePhoto] = useState("");
+
+    useEffect(() => {
+        if (contact.profilePhoto !== undefined || contact.profilePhoto !== "") {
+            setContProfilePhoto(contact.profilePhoto);
+        }
+    }, [contact.profilePhoto]);
 
     const handleChange = (e) => {
         if (setShowEmoji === true) {
@@ -52,7 +59,7 @@ function Chatting({ message, contact, myName, onPressBack }) {
     return (
         <div className='chatting'>
             <div className="chattingHeader">
-                <Avatar style={{ cursor: "pointer" }} src={contact.profilePhoto} />
+                <Avatar style={{ cursor: "pointer" }} src={contProfilePhoto} />
                 <div className="chattingHeaderInfo">
                     <h3>{contact.name}</h3>
                     <p>{contact.description}</p>
@@ -65,7 +72,7 @@ function Chatting({ message, contact, myName, onPressBack }) {
                             </IconButton>
                         </Tooltip>
                     </span>
-                    <span onClick={() => { setMenuClick(!menuClick); console.log(menuClick); }}>
+                    <span onClick={() => { setMenuClick(!menuClick)} }>
                         <IconButton>
                             <MoreVertIcon />
                         </IconButton>
